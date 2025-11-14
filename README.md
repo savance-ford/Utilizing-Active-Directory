@@ -148,3 +148,22 @@ You can scroll down until you find the <b>Members</b> section of this window, or
 
 
 In this case, what we want to do is to add <b>Alex</b> to the group, so click the <b>Add</b> button, enter Alex in the text field and then <b>OK</b> for the addition and <b>OK</b> for saving the changes. We've successfully added a new member, Alex, into the Group!
+
+## Editing memberships
+
+Finally, there's an existing user called <b>Alosha</b> that has switched from programming in Java to programming in Python, we want to remove this user from the <b>Java Developers group</b> and add them to the <b>Python Developers group</b>.
+
+To do this, look for the user <b>Alosha</b> in the list and double click on the entry. This will open the properties of the user that you will be able to edit. There's a lot of configuration to each user, click on the section on the left called <b>Member Of</b>.
+
+![alt text](image-17.png)
+
+We can see that Alosha is a member of the <b>Domain Users</b> group (all users of the domain are members of this group) and of the <b>Java Developers</b> group. You can select the <b>Java Developers</b> entry and click the <b>Remove</b> button to remove that group.
+
+
+Then click on the <b>Add</b> button to add a new membership.
+
+![alt text](image-18.png)
+
+This will pop-up a small window where you need to enter the name of the group that you want to add, in this case Python Developers. Once you are done, click <b>OK</b> in the Select Groups window and then <b>OK</b> in the editing user window.
+
+With that, we've created users and groups and we've added and removed group memberships using <b>Active Directory</b>. Let's now look into how to manage group policies.
