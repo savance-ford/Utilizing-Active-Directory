@@ -167,3 +167,63 @@ Then click on the <b>Add</b> button to add a new membership.
 This will pop-up a small window where you need to enter the name of the group that you want to add, in this case Python Developers. Once you are done, click <b>OK</b> in the Select Groups window and then <b>OK</b> in the editing user window.
 
 With that, we've created users and groups and we've added and removed group memberships using <b>Active Directory</b>. Let's now look into how to manage group policies.
+
+## Managing Group Policies
+
+
+To manage group policies, we need to use the <b>Group Policy Management</b> application. You can find it by typing ``group`` into the Windows start menu.
+
+![alt text](image-19.png)
+
+This application allows you to set policies that will manage the way machines in your domain behave. You can apply these policies to the whole domain or to separate <b>Organizational Units</b> (OUs).
+
+In our case, we want to add a new policy to the Developers OU that already exists in the domain. To do that, expand the tree until you reach the <b>example.com</b> domain tree and find the <b>Developers</b> OU inside it.
+
+![alt text](image-20.png)
+
+To create a new policy, right click on the <b>Developer</b> option and select the first menu entry: <b>Create a GPO in this domain and Link it here</b>.
+
+When you click this option, you will be prompted to set a name for the policy and once you do, the policy will get added to the OU.
+
+![alt text](image-21.png)
+
+We want to set a default wallpaper for the machines in the Developers OU, so we will call our policy <b>"New Wallpaper"</b>
+
+Once created, we want to edit the policy, to do this, right-click on the entry and click on the first menu entry: <b>Edit</b>.
+
+![alt text](image-22.png)
+
+<pre>Note: You may get a warning message about what linking policies means. That's ok, you can just accept the warning and move on.</pre>
+
+
+This will open a new application: the <b>Group Policy Management Editor</b>. This application allows you to navigate and configure all settings that can be set in a group policy.
+
+As we want to set the wallpaper, we need to navigate to this setting by going to: <b>User Configuration > Policies > Administrative Templates > Desktop > Desktop</b>
+
+![alt text](image-23.png)
+
+
+This opens a list of possible settings that we can configure, including the Desktop Wallpaper. To set the wallpaper to a specific value, double-click on the <b>Desktop Wallpaper</b> entry.
+
+![alt text](image-24.png)
+
+The window that opens allows you to set the value of the wallpaper. To do that, first click on the <b>Enabled</b> button and then enter a path for the wallpaper. The path could be a local path in the machine or a network path on a server that shares files.
+
+For this lab, simply enter ``C:\Qwiklabs\wallpaper.jpg`` in the section <b>Wallpaper Name</b>.
+
+Once you click <b>OK</b>, the group policy is created and contains the values we want. To verify this, go back to the <b>Group Policy Management</b> application and click the <b>Settings</b> tab of the new policy.
+
+<pre>
+Note: This may show a warning that the application needs to be allowed to generate web content. You will need to Add the application as a trusted website in order to view its contents.
+</pre>
+
+![alt text](image-25.png)
+
+
+By clicking the <b>show</b> links in the webpage, you can see that the policy has been defined and that the only setting being modified is the Desktop Wallpaper, which is set to the value we set above.
+
+## Conclusion
+
+You've now seen how to manage users, groups and group policies using Active Directory. There's a lot more to learn about AD, but these skills are the building blocks for administering a fleet of Windows computers.
+
+Keep it up!
